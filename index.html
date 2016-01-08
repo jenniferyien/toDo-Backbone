@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do App - Backbone</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- **************** -->
+    <!-- Loaded View -->
+    <!-- **************** -->
+    <section id="toDoApplication">
+      <header id="heading">
+        <h1>To Do List</h1>
+        <input id="newItem" placeholder="Need to get done..."/>
+        <input type="submit" id='submit' value="Add Item"/>
+      </header>
+      <section id="mainListing">
+        <ul id="toDoListing"></ul>
+      </section>
+      <footer>
+        <div>
+          <p id='notice'>Double Click to Edit</p>
+          <p id='tasks'>Pending Tasks: &#160; </p>
+          <p id='pending'></p>
+          <p class='allComplete'>Mark all as complete</p>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ************************************************ -->
+    <!-- Script tag holding DOM element for Item Listing -->
+    <!-- ************************************************ -->
+    <script type="text/template" id="itemListing">
+       <div class="view">
+         <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+         <label><%= title %></label>
+         <input class="edit" value="<%= title %>">
+         <p class="remove">x</p>
+         <hr/>
+       </div>
+    </script>
+
+    <!-- **************** -->
+    <!-- LIBRARIES -->
+    <!-- **************** -->
+    <script src="JS/jquery-2.1.4.js"></script>
+    <script src="JS/underscore.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+
+    <!-- <script src="JS/backbone.js"></script> -->
+
+    <!-- **************** -->
+    <!-- Local Storage -->
+    <!-- **************** -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js" type="text/javascript"></script>
+
+    <!-- **************** -->
+    <!-- Script  -->
+    <!-- **************** -->
+    <script src="JS/main.js"></script>
+
+
+  </body>
+</html>

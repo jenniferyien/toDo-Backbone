@@ -1,0 +1,230 @@
+/*import some google fonts*/
+/*heading*/
+@import url(https://fonts.googleapis.com/css?family=Cardo);
+/*body*/
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+
+/*sets basic body style*/
+* {
+  margin: 0;
+}
+body {
+  background-color: #EAEAEA;
+}
+
+/*Main App Style*/
+#toDoApplication {
+  margin: 0 15%;
+  border-bottom-left-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+  box-shadow: 0 8px 6px -6px black;
+  background-color: #FFFFFF;
+}
+
+
+/****************************************/
+/*HEADING STYLE (TITLE WITH SEARCH BAR)*/
+/***************************************/
+#heading {
+  text-align: center;
+  font-family: 'Cardo', serif;
+  font-size: 28px;
+  padding: 2%;
+}
+
+#heading h1 {
+  padding: 2%;
+}
+
+/*Search Bar*/
+#heading #newItem {
+  width: 300px;
+  height: 50px;
+  background: #EAEAEA;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  border: none;
+  font-size: 16px;
+  color: #2b303b;
+  padding-left: 45px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/*Submit button*/
+#heading #submit {
+  width: 100px;
+  height: 52px;
+  font-size: 16px;
+  padding: 0 10px;
+  margin:0;
+  border: none;
+  padding-bottom: 1px;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  font-weight: bold;
+  margin-left: -10px;
+  background-color: #2b303b;
+  color: #C9C9C9;
+  font-family: 'Cardo', serif;
+  cursor: pointer;
+}
+
+/******************/
+/*ITEM LISTING*/
+/*****************/
+#mainListing {
+  margin: 4% 10%;
+}
+
+#toDoListing li{
+  list-style: none;
+  margin: 2% 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  display: inline;
+}
+
+#toDoListing hr {
+  margin: 3% 0;
+}
+
+#toDoListing label {
+  margin: 0 10px;
+}
+
+.remove {
+  float: right;
+  color: #C9C9C9;
+  cursor: pointer;
+}
+
+#toDoListing .toggle[type="checkbox"]:checked + label{
+    text-decoration: line-through;
+}
+
+/**************/
+/*EDIT ACTION*/
+/**************/
+
+/*hides initial edit box*/
+#toDoListing .edit {
+  display: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  width: 80%;
+  margin-left: 10px;
+}
+
+/*removes label title when editing*/
+#toDoListing .editing label {
+  display: none; /* Hides label text when .editing*/
+}
+
+/*display edit box when edit*/
+#toDoListing .editing input.edit {
+  display: inline; /* Shows input text box when .editing*/
+}
+
+
+/******************************************************/
+/*FOOTER STYLE (PENDING ITEMS AND COMPLETE ALL OPTION)*/
+/*******************************************************/
+
+footer {
+  background-color: #2b303b;
+  border-bottom-left-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+  color: #C9C9C9;
+  height: 70px;
+  font-family: 'Cardo', serif;
+}
+
+footer div {
+  padding: 2% 10%;
+}
+
+footer #notice {
+  float: none;
+  font-size: 13px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  padding: 5px 0;
+}
+
+footer div p{
+  float: left;
+}
+
+footer #pending {
+  color: #53CC11;
+}
+
+footer .allComplete {
+  float: right;
+  cursor: pointer;
+}
+
+/**************/
+/*MEDIA QUERY*/
+/**************/
+@media (max-width: 700px) {
+  /*search bar*/
+  #heading #newItem {
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
+  }
+
+  /*submit button*/
+  #heading #submit {
+    width: 70px;
+    height: 52px;
+    font-size: 12px;
+  }
+
+  /*Item list*/
+  #mainListing {
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 500px) {
+  /*search bar*/
+  #heading #newItem {
+    width: 100px;
+    height: 50px;
+    font-size: 12px;
+    padding-left: 20px;
+  }
+
+  /*submit button*/
+  #heading #submit {
+    width: 70px;
+    height: 52px;
+    font-size: 12px;
+  }
+
+  /*Item list*/
+  #mainListing {
+    margin-left: 1%;
+  }
+
+  /*footer styling */
+  footer div p {
+    font-size: 14px;
+  }
+  footer #tasks {
+    margin-left: 27%;
+  }
+
+  footer #pending {
+    float: none;
+  }
+
+  footer .allComplete {
+    text-align: center;
+    float: none;
+    clear: both;
+  }
+}
